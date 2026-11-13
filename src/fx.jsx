@@ -12,13 +12,13 @@ export function Preloader({ onDone }) {
     const o = { v: 0 }
     const tl = gsap.timeline({ onComplete: onDone })
     tl.to(o, { v: 100, duration: 1.6, ease: 'power2.inOut', onUpdate: () => setN(Math.round(o.v)) })
-      .to('.pl-word span', { yPercent: -110, stagger: 0.04, duration: 0.6, ease: 'power3.in' }, '-=0.2')
+      .to('.pl-word span', { yPercent: -130, autoAlpha: 0, duration: 0.6, ease: 'power3.in' }, '-=0.2')
       .to('.pl-panel', { yPercent: -100, stagger: 0.08, duration: 0.9, ease: 'expo.inOut' }, '-=0.2')
   }, { scope: ref })
   return (
     <div className="preloader" ref={ref}>
       {[0, 1, 2, 3, 4].map((i) => <div key={i} className="pl-panel" />)}
-      <div className="pl-word">{'FINRIDGE'.split('').map((c, i) => <span key={i}>{c}</span>)}</div>
+      <div className="pl-word"><span><img src={`${import.meta.env.BASE_URL}finridge-logo.jpeg`} alt="FinRidge — Unlock your financial potential" /></span></div>
       <div className="pl-count">{n}%</div>
     </div>
   )

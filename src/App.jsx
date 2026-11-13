@@ -6,7 +6,7 @@ import { useGSAP } from '@gsap/react'
 import * as THREE from 'three'
 import NET from 'vanta/dist/vanta.net.min'
 import { SplitText, ShinyText, SpotlightCard, CountUp, Magnet, LogoLoop } from './bits.jsx'
-import { Preloader, Cursor, RotatingText, ScrollReveal, ScrollVelocity, TiltedCard, ScrollProgress, ClickSpark } from './fx.jsx'
+import { Preloader, Cursor, ScrollReveal, ScrollVelocity, TiltedCard, ScrollProgress, ClickSpark } from './fx.jsx'
 
 gsap.registerPlugin(ScrollTrigger, useGSAP)
 const reduced = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -59,9 +59,9 @@ function Hero({ ready }) {
         <p className="eyebrow fade"><ShinyText>Finridge Commercial Brokers · Dubai</ShinyText></p>
         <h1>
           <span className="hl"><span>Build Your</span></span>
-          <span className="hl"><span><RotatingText words={['Dream', 'Future', 'Business', 'Home']} /></span></span>
+          <span className="hl"><span className="gold-t">Dream</span></span>
         </h1>
-        <p className="lead fade">Unlock your financial potential with credit cards and personal finance from the UAE’s leading Islamic and conventional banks.</p>
+        <p className="lead fade">Unlock your financial potential</p>
         <div className="row fade">
           <Magnet><a href="#contact" className="btn gold"><span>Get a Quote</span></a></Magnet>
           <Magnet strength={0.2}><a href="#offer" className="btn ghost"><span>Explore offers</span></a></Magnet>
@@ -143,7 +143,7 @@ export default function App() {
       {!reduced && !ready && <Preloader onDone={() => setReady(true)} />}
       <Cursor /><ClickSpark /><ScrollProgress />
       <header className="nav">
-        <a href="#home" className="logo">Fin<b>ridge</b></a>
+        <a href="#home" className="logo"><img src={`${import.meta.env.BASE_URL}finridge-logo.jpeg`} alt="FinRidge — Unlock your financial potential" /></a>
         <nav className={menu ? 'open' : ''}>
           {links.map(([l, h]) => <a key={h} href={h} className="roll" data-t={l} onClick={() => setMenu(false)}><span>{l}</span></a>)}
           <a className="btn gold sm" href="#contact" onClick={() => setMenu(false)}><span>Get a Quote</span></a>
@@ -266,7 +266,7 @@ export default function App() {
 
       <footer className="foot">
         <div className="wrap foot-grid">
-          <div><a href="#home" className="logo">Fin<b>ridge</b></a><p>Finridge Commercial Brokers LLC — retail finance solutions for Islamic and conventional banks across the UAE.</p></div>
+          <div><a href="#home" className="logo"><img src={`${import.meta.env.BASE_URL}finridge-logo.jpeg`} alt="FinRidge — Unlock your financial potential" /></a><p>Finridge Commercial Brokers LLC — retail finance solutions for Islamic and conventional banks across the UAE.</p></div>
           <div className="flinks">{links.map(([l, h]) => <a key={h} href={h}>{l}</a>)}
             <a href="https://www.linkedin.com/company/finridge-commercial-brokers-llc/" target="_blank" rel="noreferrer">LinkedIn ↗</a></div>
         </div>
