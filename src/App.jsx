@@ -76,6 +76,7 @@ export default function App() {
   const [menu, setMenu] = useState(false)
   const [ready, setReady] = useState(reduced)
   const lenisRef = useRef(null)
+  useEffect(() => { if (menu) lenisRef.current?.stop(); else if (ready) lenisRef.current?.start(); document.body.style.overflow = menu ? 'hidden' : '' }, [menu, ready])
 
   useEffect(() => {
     if (reduced) return
@@ -131,10 +132,7 @@ export default function App() {
         scrollTrigger: { trigger: '.foot', start: 'top 90%', end: 'bottom bottom', scrub: true } })
     })
 
-    gsap.to('.nav', { backgroundColor: 'rgba(20,40,75,.9)', backdropFilter: 'blur(12px)', paddingTop: 12, paddingBottom: 12,
-      scrollTrigger: { start: 80, end: 81, toggleActions: 'play none none reverse' } })
-    // hide nav on scroll down, show on scroll up
-    ScrollTrigger.create({ start: 300, onUpdate: (s) => gsap.to('.nav', { yPercent: s.direction === 1 ? -110 : 0, duration: 0.4, ease: 'power2.out', overwrite: 'auto' }) })
+    ScrollTrigger.create({ start: 60, end: 'max', toggleClass: { targets: '.nav', className: 'scrolled' } })
   })
 
   const links = [['Home', '#home'], ['Services', '#services'], ['Careers', '#careers'], ['About', '#about'], ['Contact', '#contact']]
