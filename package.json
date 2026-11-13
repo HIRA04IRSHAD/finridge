@@ -2,15 +2,23 @@
   "name": "finridge",
   "private": true,
   "type": "module",
-  "scripts": { "dev": "vite", "build": "vite build", "preview": "vite preview" },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node -e \"require('fs').copyFileSync('dist/index.html','dist/404.html')\"",
+    "preview": "vite preview"
+  },
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "gsap": "^3.13.0",
     "lenis": "^1.3.27",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0",
     "three": "0.134.0",
     "vanta": "0.5.24"
   },
-  "devDependencies": { "@vitejs/plugin-react": "^4.3.4", "vite": "^5.4.11" }
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.11"
+  }
 }
