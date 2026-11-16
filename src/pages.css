@@ -105,3 +105,13 @@ main{display:block}
 
 html,body{overflow-x:clip}
 main{overflow-x:clip}
+
+/* phone tap targets */
+@media(max-width:899px){
+  .burger{width:44px;height:44px;display:grid;place-content:center;gap:7px;margin-right:-6px}
+  .burger span{display:block;width:26px;margin:0}
+  .burger.x span:first-child{transform:translateY(4.5px) rotate(45deg)}.burger.x span:last-child{transform:translateY(-4.5px) rotate(-45deg)}
+  .flinks{gap:0 40px}.flinks a,.fcontact a{display:inline-flex;align-items:center;min-height:44px}
+  .fcontact{gap:0}
+  .crumb a{display:inline-block;padding:10px 0}
+}
