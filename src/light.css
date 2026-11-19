@@ -76,3 +76,9 @@ html,body{background:#fff;color:var(--text)}
 .flinks a:hover,.fcontact a:hover{color:var(--gold)}
 .copy{color:var(--muted);opacity:1}
 .giant{color:var(--gold);opacity:.9}
+
+/* quote form */
+.form{scroll-margin-top:96px}
+.form h3{color:var(--navy2)}
+.form .consent-row{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--muted);line-height:1.45}
+.form .consent-row input{width:20px;height:20px;min-height:0;margin-top:1px;padding:0;accent-color:var(--gold);flex:none}

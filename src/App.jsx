@@ -66,7 +66,7 @@ export default function App() {
           {LINKS.map(([l, h]) => (
             <NavLink key={h} to={h} end className={({ isActive }) => `roll ${isActive && !h.includes('#') ? 'active' : ''}`} data-t={l}><span>{l}</span></NavLink>
           ))}
-          <Link className="btn gold sm" to="/contact"><span>Get a Quote</span></Link>
+          <Link className="btn gold sm" to="/contact#quote"><span>Get a Quote</span></Link>
         </nav>
         <button className={`burger ${menu ? 'x' : ''}`} aria-label="Menu" onClick={() => setMenu(!menu)}><span /><span /></button>
       </header>

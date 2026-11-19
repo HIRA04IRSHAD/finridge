@@ -52,7 +52,7 @@ export default function Services() {
               <SplitText text={p.title} />
               <p className="body reveal">{p.lead}</p>
               <ul className="checks">{p.points.map((pt) => <li key={pt}><b>✓</b>{pt}</li>)}</ul>
-              <div className="reveal"><Magnet><Link to="/contact" className="btn gold"><span>Apply for {p.title.toLowerCase()}</span></Link></Magnet></div>
+              <div className="reveal"><Magnet><Link to={`/contact?product=${p.id}#quote`} className="btn gold"><span>Apply for {p.title.toLowerCase()}</span></Link></Magnet></div>
             </div>
           </div>
         ))}

@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { SplitText, SpotlightCard, CountUp, Magnet } from '../bits.jsx'
@@ -12,7 +13,7 @@ function Role({ job, open, onToggle }) {
   useGSAP(() => {
     gsap.to(body.current, { height: open ? 'auto' : 0, duration: 0.6, ease: 'expo.inOut' })
   }, { dependencies: [open] })
-  const mail = `mailto:${EMAIL}?subject=${encodeURIComponent('Application: ' + job.t)}`
+  const apply = `/contact?product=careers&role=${encodeURIComponent(job.t)}#quote`
   return (
     <li className={`role ${open ? 'open' : ''}`}>
       <button className="role-head" onClick={onToggle} aria-expanded={open}>
@@ -23,7 +24,7 @@ function Role({ job, open, onToggle }) {
         <div className="role-inner">
           <h4>What you’ll do</h4>
           <ul>{job.r.map((r) => <li key={r}>{r}</li>)}</ul>
-          <Magnet><a href={mail} className="btn gold"><span>Apply now →</span></a></Magnet>
+          <Magnet><Link to={apply} className="btn gold"><span>Apply now →</span></Link></Magnet>
         </div>
       </div>
     </li>

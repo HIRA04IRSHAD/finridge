@@ -42,7 +42,7 @@ function Hero({ ready }) {
         </h1>
         <p className="lead fade">Unlock your financial potential</p>
         <div className="row fade">
-          <Magnet><Link to="/contact" className="btn gold"><span>Get a Quote</span></Link></Magnet>
+          <Magnet><Link to="/contact#quote" className="btn gold"><span>Get a Quote</span></Link></Magnet>
           <Magnet strength={0.2}><Link to="/services" className="btn ghost"><span>Explore services</span></Link></Magnet>
         </div>
       </div>
