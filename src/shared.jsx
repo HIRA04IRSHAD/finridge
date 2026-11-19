@@ -106,3 +106,22 @@ export function ContactForm() {
     </form>
   )
 }
+
+const PARTNER_LOGOS = [
+  ['Dubai Islamic Bank', 'partner-dib.webp', 560],
+  ['Emirates Islamic', 'partner-ei.webp', 553],
+  ['Sharjah Islamic Bank', 'partner-sib.webp', 525],
+]
+// Trusted partners: real bank logos with their names
+export function PartnerLogos() {
+  return (
+    <div className="tp-grid stagger">
+      {PARTNER_LOGOS.map(([name, file, w]) => (
+        <figure className="tp-card" key={name}>
+          <div className="tp-logo"><img src={`${import.meta.env.BASE_URL}partners/${file}`} alt={`${name} logo`} loading="lazy" width={w} height="160" /></div>
+          <figcaption>{name}</figcaption>
+        </figure>
+      ))}
+    </div>
+  )
+}

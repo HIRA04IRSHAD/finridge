@@ -4,9 +4,9 @@ import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import * as THREE from 'three'
 import NET from 'vanta/dist/vanta.net.min'
-import { SplitText, ShinyText, SpotlightCard, CountUp, Magnet, LogoLoop } from '../bits.jsx'
+import { SplitText, ShinyText, SpotlightCard, CountUp, Magnet } from '../bits.jsx'
 import { ScrollReveal, ScrollVelocity, TiltedCard } from '../fx.jsx'
-import { CTA } from '../shared.jsx'
+import { CTA, PartnerLogos } from '../shared.jsx'
 import { useReveal } from '../useReveal.js'
 import { reduced } from '../useReveal.js'
 import { SERVICES, PILLARS, PRINCIPLES, PARTNERS, JOBS, PRODUCTS } from '../data.js'
@@ -17,7 +17,7 @@ function Hero({ ready }) {
   useEffect(() => {
     if (reduced || window.innerWidth < 700) return
     const fx = NET({ el: el.current, THREE, mouseControls: true, touchControls: true, gyroControls: false,
-      color: 0x3ba845, backgroundColor: 0xffffff, points: 12, maxDistance: 22, spacing: 16, showDots: true })
+      color: 0x16913a, backgroundColor: 0xffffff, points: 12, maxDistance: 22, spacing: 16, showDots: true })
     return () => fx.destroy()
   }, [])
   useGSAP(() => {
@@ -129,7 +129,7 @@ export default function Home({ ready }) {
 
       <section className="sec partners">
         <p className="eyebrow center">Our trusted partners</p>
-        <LogoLoop items={PARTNERS} />
+        <div className="wrap"><PartnerLogos /></div>
       </section>
 
       <section className="sec principles-sec">

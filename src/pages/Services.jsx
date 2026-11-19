@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
-import { SplitText, SpotlightCard, Magnet, LogoLoop } from '../bits.jsx'
+import { SplitText, SpotlightCard, Magnet } from '../bits.jsx'
 import { ScrollReveal, ScrollVelocity, TiltedCard } from '../fx.jsx'
-import { PageHeader, CTA, Accordion } from '../shared.jsx'
+import { PageHeader, CTA, Accordion, PartnerLogos } from '../shared.jsx'
 import { useReveal } from '../useReveal.js'
 import { PRODUCTS, STEPS, SERVICES, PARTNERS, FAQ } from '../data.js'
 
@@ -90,7 +90,7 @@ export default function Services() {
 
       <section className="sec partners">
         <p className="eyebrow center">Partnered with top UAE banks</p>
-        <LogoLoop items={PARTNERS} />
+        <div className="wrap"><PartnerLogos /></div>
       </section>
 
       <section className="sec principles-sec">
