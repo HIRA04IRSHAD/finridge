@@ -17,7 +17,7 @@ function Hero({ ready }) {
   useEffect(() => {
     if (reduced || window.innerWidth < 700) return
     const fx = NET({ el: el.current, THREE, mouseControls: true, touchControls: true, gyroControls: false,
-      color: 0x6cc04a, backgroundColor: 0x14284b, points: 12, maxDistance: 22, spacing: 16, showDots: true })
+      color: 0x3ba845, backgroundColor: 0xffffff, points: 12, maxDistance: 22, spacing: 16, showDots: true })
     return () => fx.destroy()
   }, [])
   useGSAP(() => {

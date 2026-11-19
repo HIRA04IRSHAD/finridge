@@ -1,0 +1,78 @@
+/* ================= LIGHT THEME =================
+   White is the main colour; navy (#1B3A6B) and green (#3BA845) are the accents
+   for buttons, headings, highlights and feature cards. Loaded last. */
+:root{--bg:#FFFFFF;--tint:#EEF2F8;--mint:#EAF6EC;--text:#2B2F38;--muted:#5B6474;--line:#E3E7EE}
+html,body{background:#fff;color:var(--text)}
+
+/* nav */
+.nav{color:var(--navy2)}
+.nav::before{background:rgba(255,255,255,.92);box-shadow:0 10px 30px -18px rgba(20,40,75,.35);border-bottom:1px solid var(--line)}
+.logo{box-shadow:0 6px 20px rgba(20,40,75,.12);border:1px solid var(--line)}
+.burger span{background:var(--navy2)}
+.nav nav a.active span{color:var(--gold)}
+.roll::after{color:var(--gold)}
+@media(max-width:899px){
+  .nav nav{background:#fff;color:var(--navy2)}
+  .nav nav a{color:var(--navy2)}
+}
+
+/* buttons */
+.btn.gold{color:#fff}
+.btn.ghost{border-color:var(--navy);color:var(--navy);background:#fff}
+.btn.ghost::before{background:var(--navy)}
+.btn.ghost:hover{color:#fff}
+.btn.white{background:var(--navy);color:#fff}.btn.white::before{background:var(--gold)}
+
+/* preloader + page wipe */
+.pl-panel{background:var(--tint)}
+.pl-count{color:rgba(27,58,107,.18)}
+.wipe{background:var(--tint)}
+
+/* hero */
+.hero{background:radial-gradient(ellipse at 75% 25%,#EEF2F8,#ffffff 65%);color:var(--navy2)}
+.hero .lead{color:var(--muted)}
+.hero .eyebrow,.dark .eyebrow,.h-wrap .eyebrow,.page-head .eyebrow{color:var(--gold2)}
+.gold-t,.rot{color:var(--gold)}
+.orb.a{background:rgba(59,168,69,.18)}
+.orb.b{background:rgba(27,58,107,.12)}
+.scroll-hint{color:var(--muted)}
+
+/* formerly dark sections -> soft navy tint */
+.sec.dark{background:var(--tint);color:var(--navy2)}
+.sec.dark .body{color:var(--muted)}
+.dark .arrow{color:var(--gold)}
+.h-wrap{background:var(--tint);color:var(--navy2)}
+.h-progress{background:rgba(27,58,107,.12)}
+.h-wrap .spot,.sec.dark .spot:not(.tilt){background:#fff;border-color:var(--line);box-shadow:0 18px 44px rgba(20,40,75,.08)}
+.h-wrap .spot p,.sec.dark .spot p{color:var(--muted)}
+.h-wrap .big{color:rgba(59,168,69,.22)}
+.spot::before{background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(59,168,69,.12),transparent 60%)}
+
+/* jobs list */
+.jobs{border-top-color:var(--line)}
+.jobs a{border-bottom-color:var(--line)}
+.jobs p,.jobs span{color:var(--muted)}
+.jobs li:hover a,.jobs li:hover p,.jobs li:hover span{color:#fff}
+
+/* timeline (services: how it works) */
+.tl-line{background:rgba(27,58,107,.14)}
+.tl-dot{background:#fff;border-color:rgba(27,58,107,.2);color:var(--navy2)}
+.tl-step.on .tl-dot{color:#fff}
+.tl-step p{color:var(--muted)}
+
+/* inner page headers */
+.page-head{background:radial-gradient(ellipse at 80% 15%,#EEF2F8,#ffffff 70%);color:var(--navy2);border-bottom:1px solid var(--line)}
+.page-head h1.split{color:var(--navy2)}
+.page-head .lead{color:var(--muted)}
+.crumb{color:var(--muted)}.crumb a:hover{color:var(--gold)}
+.ph-grid{background-image:linear-gradient(rgba(27,58,107,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(27,58,107,.07) 1px,transparent 1px)}
+
+/* contact cards + form */
+.form{box-shadow:0 30px 80px -40px rgba(20,40,75,.3);border:1px solid var(--line)}
+#contact{background:var(--mint)}
+
+/* footer */
+.foot{background:var(--tint);color:var(--muted);border-top:1px solid var(--line)}
+.flinks a:hover,.fcontact a:hover{color:var(--gold)}
+.copy{color:var(--muted);opacity:1}
+.giant{color:var(--gold);opacity:.9}

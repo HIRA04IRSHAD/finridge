@@ -4,6 +4,7 @@ import App from './App.jsx'
 import 'lenis/dist/lenis.css'
 import './styles.css'
 import './pages.css'
+import './light.css'
 createRoot(document.getElementById('root')).render(
   <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '')}><App /></BrowserRouter>
 )
